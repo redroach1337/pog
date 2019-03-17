@@ -1,0 +1,39 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# vim:fileencoding=utf-8
+from array import array
+ 
+alph = list('абвгдежзийклмнопрстуфхцчшщъыьэюя')
+new_alph = list()
+keyword = list(str(input('Введите ключевое слово:\n')))
+text = list(str(input('Введите текст:\n')))
+b=-1
+new_text=list()
+my_keyword=list()
+
+
+for i in keyword:
+  if i not in my_keyword:
+    my_keyword.append(i)
+
+for i in alph:
+  if i not in keyword:
+    new_alph.append(i)
+
+new_alph = my_keyword + new_alph
+new_alph2= new_alph + new_alph
+
+print(new_alph2)
+print(new_alph)
+
+for i in text:
+  b+=1
+  if i in new_alph:
+    a=-1
+    for r in new_alph:
+      a+=1
+      if r==i:
+        text[b]=new_alph2[a+8]
+        
+
+print(text)
